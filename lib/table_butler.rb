@@ -37,7 +37,7 @@ class Table_Butler
     results = DB.exec("SELECT * FROM #{table_name};")
     results.each do |result|
       result.each do |key, value|
-        if ((/[0-9]/ =~ value[0]) == 0) && (!value.include? ":")
+        if ((/[0-9]/ =~ value[0]) == 0) && (!value.include? "-")
           value = value.to_i
         end
         result[key] = value
